@@ -1,0 +1,97 @@
+﻿@model OtoGaleri.ENTITIES.Entities.Arac
+
+@{
+    ViewData["Title"] = "AracEkle";
+}
+
+<h1>AracEkle</h1>
+
+<h4>Arac</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AracEkle" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SasiNo" class="control-label"></label>
+                <input asp-for="SasiNo" class="form-control" />
+                <span asp-validation-for="SasiNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Markasi" class="control-label"></label>
+                <input asp-for="Markasi" class="form-control" />
+                <span asp-validation-for="Markasi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modeli" class="control-label"></label>
+                <input asp-for="Modeli" class="form-control" />
+                <span asp-validation-for="Modeli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MotorHacmi" class="control-label"></label>
+                <input asp-for="MotorHacmi" class="form-control" />
+                <span asp-validation-for="MotorHacmi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyati" class="control-label"></label>
+                <input asp-for="Fiyati" class="form-control" />
+                <span asp-validation-for="Fiyati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VitesTipi" class="control-label"></label>
+                @*<input asp-for="VitesTipi" class="form-control" />*@
+                <select class="form-control" asp-for="VitesTipi" asp-items="@Html.GetEnumSelectList<VitesTipi>()">
+                    <option>Lütfen Seçiniz</option>
+                </select>
+                <span asp-validation-for="VitesTipi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YakitTuru" class="control-label"></label>
+                @*<input asp-for="YakitTuru" class="form-control" />*@
+                <select class="form-control" asp-for="YakitTuru" asp-items="@Html.GetEnumSelectList<YakitTuru>()">
+                    <option>Lütfen Seçiniz</option>
+                </select>
+                <span asp-validation-for="YakitTuru" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UretimTarihi" class="control-label"></label>
+                <input asp-for="UretimTarihi" class="form-control" />
+                <span asp-validation-for="UretimTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AracTipi" class="control-label"></label>
+                @*<input asp-for="AracTipi" class="form-control" />*@
+                <select class="form-control" asp-for="AracTipi" asp-items="@Html.GetEnumSelectList<AracTipi>()">
+                    <option>Lütfen Seçiniz</option>
+                </select>
+                <span asp-validation-for="AracTipi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sehir" class="control-label"></label>
+                @*<input asp-for="Sehir" class="form-control" />*@
+                <select class="form-control" asp-for="Sehir" asp-items="@Html.GetEnumSelectList<Sehir>()">
+                    <option>Lütfen Seçiniz</option>
+                </select>
+                <span asp-validation-for="Sehir" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KullaniciID" class="control-label"></label>
+                <input asp-for="KullaniciID" class="form-control" />
+                <span asp-validation-for="KullaniciID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MagazaID" class="control-label"></label>
+                <input asp-for="MagazaID" class="form-control" />
+                <span asp-validation-for="MagazaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Arac>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-fluid">
+    <h4 class="page-title">Anasayfa</h4>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-stats card-warning">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="icon-big text-center">
+                                <i class="la la-users"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                            <div class="numbers">
+                                <p class="card-category">Kullanıcı Sayısı</p>
+                                <h4 class="card-title">@ViewBag.KullaniciSayisi</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-stats card-success">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="icon-big text-center">
+                                <i class="la la-bar-chart"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                            <div class="numbers">
+                                <p class="card-category">Araba Sayısı</p>
+                                <h4 class="card-title">@ViewBag.AracSayisi</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-stats card-danger">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="icon-big text-center">
+                                <i class="la la-newspaper-o"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                            <div class="numbers">
+                                <p class="card-category">Mağaza Sayısı</p>
+                                <h4 class="card-title">@ViewBag.MagazaSayisi</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Tüm Araçlar</div>
+            </div>
+            <div class="card-body">
+                <div class="card-sub">
+                    Tüm araçların listesini burada görebilirsiniz.
+                </div>
+                <table class="table table-striped mt-3">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Marka</th>
+                            <th scope="col">Model</th>
+                            <th scope="col">Üretim Yılı</th>
+                            <th scope="col">Motor Hacmi</th>
+                            <th scope="col">Şehir</th>
+                            <th scope="col">Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Arac item in Model)
+                        {
+                            <tr>
+                                <td>@item.ID</td>
+                                <td>@item.Markasi</td>
+                                <td>@item.Modeli</td>
+                                <td>@item.UretimTarihi.Year</td>
+                                <td>@item.MotorHacmi</td>
+                                <td>@item.Sehir.ToString()</td>
+                                <td>@item.Fiyati ₺</td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
